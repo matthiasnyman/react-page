@@ -1,0 +1,76 @@
+
+.stopwatch{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+}
+
+#watch{
+  width: 100%;
+}
+
+.stopwatch h1{
+  position: absolute;
+  top: 94px;
+  left: calc(50% - 112px);
+  width: 220px;
+  height: 150px;
+  margin: 50px auto;
+  background-color: #B9B991;
+  border-radius: 10%;
+
+}
+
+.lapTime{
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  /* transform: rotate(0deg); */
+  size: 90%;
+}
+
+.lapTime:active {
+  top: 26px;
+  left: 4px;
+}
+
+.startTime, .stopTime{
+  position: absolute;
+  top: 21px;
+  right: 9px;
+  size: 90%;
+  transform: rotate(81deg);
+}
+
+.startTime:active, .stopTime:active {
+  top: 24px;
+  right: 12px; 
+}
+
+.resetTime{
+  position: absolute;
+  top: -30px;
+  right: calc(50% - 46px);
+  transform: rotate(42deg);
+  size: 90;
+}
+
+.resetTime:active {
+  top: -26px;
+}
+
+
+ul{
+  position: absolute;
+  top: 180px;
+  left: 120px;  
+  height: 70px;
+  overflow: hidden;
+}
+
+ul li{
+  list-style: none;
+  width: 100px;
+  text-align: left;
+}
