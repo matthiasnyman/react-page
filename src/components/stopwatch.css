@@ -16,16 +16,18 @@ body {
   width: 100%;
 }
 
-.stopwatch h1{
+.watchBackground{
   position: absolute;
   top: 94px;
-  left: calc(50% - 122px);
-  width: 160px;
+  left: calc(50% - 120px);
+  width: 230px;
   height: 150px;
   margin: 50px auto;
   background-color: #B9B991;
   border-radius: 10%;
-  padding: 0 40px;
+}
+.stopwatch h2{
+  margin: 10px 50px;
   text-align: left;
   font: Digital-7;
 
@@ -74,7 +76,7 @@ ul{
   position: absolute;
   top: 180px;
   left: 120px;  
-  height: 70px;
+  height: 75px;
   overflow: hidden;
 }
 
