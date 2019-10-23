@@ -1,9 +1,7 @@
-//  första laptiden r alltid förra?
-// componentDidMount
-
 import React, { Component } from "react";
 import './stopwatch.css'
 import ms from 'pretty-ms';
+import humanizeDuration from 'humanize-duration';
 import Watch from '../img/stopwatch.png';
 import Button from '../img/button.png';
 
@@ -27,24 +25,25 @@ class Stopwatch extends Component {
   startTimer() {
     if (!this.state.isOn) {
 
-      if(this.state.start === 0){
-        this.setState({
-          start: Date.now(),
-        })
-      }
+      this.setState({
+        start: Date.now() - this.state.time
+      })
+      
 
       this.setState({ isOn: true })
       
       this.timer = setInterval( () =>
 
         this.setState({
-
           time: Date.now() - this.state.start,
 
         }), 10
       )
     }
-      
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer)
   }
 
   stopTimer() {
@@ -85,11 +84,24 @@ class Stopwatch extends Component {
       <li key={number.key}>{number.key}: {ms(number.lapTime)}</li>
     );
 
+    const shortEnglishHumanizer = humanizeDuration.humanizer({
+      language: 'shortEn',
+      languages: {
+        shortEn: {
+          h: () => ':',
+          m: () => ':',
+          s: () => '',
+          ms: () => 'ms',
+        }
+      }
+    })
+
     return (
       <div className="stopwatch">
         <img id='watch'  src={Watch} alt='stopwatch' />
         {this.state.time === 0 ? <h1>0</h1>:
-        <h1> {ms(this.state.time)} </h1>
+        // <h1> {humanizeDuration(this.state.time), { spacer: '' }} </h1>
+          <h1> {shortEnglishHumanizer(this.state.time, { maxDecimalPoints: 2 })} </h1>
         }
 
         <div>
