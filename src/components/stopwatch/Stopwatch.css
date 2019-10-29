@@ -4,13 +4,11 @@
   width: 400px;
   height: 400px;
   margin: 50px auto;
-}
-
-body {
   font-family: Digital-7 ;
 }
 
-@font-face{ font-family: Digital-7; src: url('../font/digital_7/digital-7.ttf')}
+
+@font-face{ font-family: Digital-7; src: url('../../font/digital_7/digital-7.ttf')}
 
 #watch{
   width: 100%;

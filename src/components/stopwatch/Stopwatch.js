@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import "./stopwatch.css";
-import ms from "pretty-ms";
+import "./Stopwatch.css";
 import humanizeDuration from "humanize-duration";
-import Watch from "../img/stopwatch.png";
-import Button from "../img/button.png";
+import Watch from "../../img/stopwatch.png";
+import Button from "../../img/button.png";
 
 class Stopwatch extends Component {
   constructor() {
@@ -25,10 +24,9 @@ class Stopwatch extends Component {
   startTimer() {
     if (!this.state.isOn) {
       this.setState({
-        start: Date.now() - this.state.time
+        start: Date.now() - this.state.time,
+        isOn: true
       });
-
-      this.setState({ isOn: true });
 
       this.timer = setInterval(
         () =>
@@ -91,7 +89,7 @@ class Stopwatch extends Component {
 
     const lapTimes = this.state.times.map(number => (
       <li key={number.key}>
-        {number.key}: {textHumanizer(number.lapTime)}
+        {number.key}: {textHumanizer(number.lapTime, { maxDecimalPoints: 2 })}
       </li>
     ));
 
