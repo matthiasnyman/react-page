@@ -46,7 +46,7 @@ function App(){
           <Todo  />
         </Route>
         <Route path="/sudoku">
-          <Sudoku  />
+          {/* <Sudoku  /> */}
         </Route>
         <Route path="/">
           <Home  />

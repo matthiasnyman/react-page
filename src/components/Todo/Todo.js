@@ -8,26 +8,7 @@ class Todo extends React.Component {
     super();
     this.state = {
       text: "",
-      todos: [
-        {
-          id: 1,
-          text: 'water the plant',
-          completed: false,
-          edit: false
-        },
-        {
-        id: 2,
-        text: 'walk the dog',
-        completed: false,
-        edit: false
-        },
-        {
-          id: 3,
-          text: 'finish the todo',
-          completed: false,
-          edit: false
-        }
-      ]
+      todos: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,19 +18,54 @@ class Todo extends React.Component {
     this.onRemove = this.onRemove.bind(this);
   }
 
+  componentDidMount() {
+    this.getTodos();
+  }
+
+  getTodos() {
+    fetch("http://localhost:4000/todos")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            todos: result
+          });
+        },
+
+        error => {
+          this.setState({
+            error
+          });
+        }
+      );
+  }
+
   handleChange(e) {
     if (typeof e === "number") {
-      this.setState(prevState => {
-        const updatedTodos = prevState.todos.map(todo => {
-          if (todo.id === e) {
-            todo.completed = !todo.completed;
-          }
-          return todo;
-        });
-        return {
-          todos: updatedTodos
-        };
-      });
+      // this.setState(prevState => {
+      //   const updatedTodos = prevState.todos.map(todo => {
+      //     if (todo.id === e) {
+      //       todo.completed = !todo.completed;
+      //     }
+      //     return todo;
+      //   });
+      //   return {
+      //     todos: updatedTodos
+      //   };
+      // });
+
+      fetch(`http://localhost:4000/todos/${e}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          completed: !this.state.completed
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+        .then(response => response.json())
+        .then(json => this.getTodos());
+
     } else {
       this.setState(prevState => {
         const updatedTodos = prevState.todos.map(todo => {
@@ -75,11 +91,25 @@ class Todo extends React.Component {
 
   onChangeEvent(value, event) {
     if (event.key === "Enter") {
-      this.setState({
-        todos: this.state.todos.map(item =>
-          item.id === value.id ? { ...item, edit: false } : item
-        )
-      });
+      // this.setState({
+      //   todos: this.state.todos.map(item =>
+      //     item.id === value.id ? { ...item, edit: false } : item
+      //     )
+      //   });
+      //   console.log(value.text);
+
+      fetch(`http://localhost:4000/todos/${value.id}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          text: value.text,
+          edit: false
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+        .then(response => response.json())
+        .then(json => this.getTodos());
     }
   }
 
@@ -90,22 +120,34 @@ class Todo extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
-    const object= {
-      id: Date.now(),
-      text: this.state.text,
-      completed: false,
-      edit: false
-    };
-
     this.setState({
-      text: "",
-      todos: [...this.state.todos, object]
+      text: ""
     });
+
+    fetch("http://localhost:4000/todos", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: Date.now(),
+        text: this.state.text,
+        completed: false,
+        edit: false
+      })
+    })
+      .then(response => response.json())
+      .then(json => this.getTodos());
   };
 
   onRemove(id) {
-    const filteredArray = this.state.todos.filter(item => item.id !== id);
-    this.setState({ todos: filteredArray });
+    // const filteredArray = this.state.todos.filter(item => item.id !== id);
+    // this.setState({ todos: filteredArray });
+
+    fetch(`http://localhost:4000/todos/${id}`, {
+      method: "DELETE"
+    }).then(() => this.getTodos());
   }
 
   render() {
