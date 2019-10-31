@@ -25,15 +25,19 @@ body{
 
   border-bottom: 1px solid rgba(117, 116, 116, 0.507);
   
-  p{
+  p, input {
     flex: 1;
     margin: auto 0;
+    padding: 0 20px;
     width: 200px;
-    text-align: center;
+    text-align: center; 
+    cursor: pointer;
   }
 
   div{
-    margin: 10px auto;
+    margin: auto;
+    font-size: 30px;
+    cursor: pointer;
 
   }
   

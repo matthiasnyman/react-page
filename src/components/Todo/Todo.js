@@ -8,7 +8,26 @@ class Todo extends React.Component {
     super();
     this.state = {
       text: "",
-      todos: []
+      todos: [
+        {
+          id: 1,
+          text: 'water the plant',
+          completed: false,
+          edit: false
+        },
+        {
+        id: 2,
+        text: 'walk the dog',
+        completed: false,
+        edit: false
+        },
+        {
+          id: 3,
+          text: 'finish the todo',
+          completed: false,
+          edit: false
+        }
+      ]
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -55,13 +74,7 @@ class Todo extends React.Component {
   }
 
   onChangeEvent(value, event) {
-    
     if (event.key === "Enter") {
-
-    
-
-        // item => item.id === value.id ? console.log(item.text) : console.log('fuck') )
-
       this.setState({
         todos: this.state.todos.map(item =>
           item.id === value.id ? { ...item, edit: false } : item
@@ -70,14 +83,14 @@ class Todo extends React.Component {
     }
   }
 
-
   onChange(event) {
     this.setState({ text: event.target.value });
   }
 
   onSubmit = event => {
     event.preventDefault();
-    const object = {
+
+    const object= {
       id: Date.now(),
       text: this.state.text,
       completed: false,
@@ -115,6 +128,7 @@ class Todo extends React.Component {
           onChange={this.onChange}
         />
         <div className="todo-list">
+          <h3>List</h3>
           <div>{todoItems}</div>
         </div>
       </>

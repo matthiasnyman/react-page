@@ -1,0 +1,39 @@
+/* with css reset */
+* { box-sizing: border-box; }
+
+
+#sudoku-fild{ 
+  margin: 10px auto;  
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+
+  
+  tr{
+    td{
+      width: 40px;
+      height: 40px;
+      border: 1px solid gray;
+      cursor: pointer;
+      
+    }
+    td:hover{
+      background-color: rgb(235, 231, 231);
+    }
+  }
+
+  tr:first-child td {
+    border-top: 2px solid black;
+  }
+
+  tr:nth-child(3n) td {
+    border-bottom: 2px solid black;
+  }
+
+  td:first-child {
+    border-left: 2px solid black;
+  }
+  td:nth-child(3n) {
+    border-right: 2px solid black;
+  }
+
+}

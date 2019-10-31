@@ -10,6 +10,7 @@ import './App.scss';
 
 import Stopwatch from './components/stopwatch/Stopwatch';
 import Todo from './components/Todo/Todo';
+import Sudoku from './components/sodoku/Sodoku';
 import Home from './components/Home/Home';
 
 
@@ -17,7 +18,6 @@ function App(){
   return (
     <Router>
       <nav>
-        {/* <h2>React projekt site</h2> */}
         <ul>
           <div></div>
           <li>
@@ -30,6 +30,9 @@ function App(){
             <li>
               <Link to="/todo">Todo</Link>
             </li>
+            <li>
+              <Link to="/sudoku">Sudoku</Link>
+            </li>
           </div>
         </ul>
       </nav>
@@ -41,6 +44,9 @@ function App(){
         </Route>
         <Route path="/todo">
           <Todo  />
+        </Route>
+        <Route path="/sudoku">
+          <Sudoku  />
         </Route>
         <Route path="/">
           <Home  />

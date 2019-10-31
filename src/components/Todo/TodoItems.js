@@ -3,13 +3,15 @@ import React from "react";
 function TodoItem(props) {
   const completedStyle = {
     fontStyle: "italic",
-    color: "#cdcdcd",
+    color: "#c4c4c4",
     textDecoration: "line-through"
   };
 
 
   return (
     <div className="todo-item">
+
+
       <div onClick={() => props.handleChange(props.item.id)}>
         {props.item.completed ? <>&#10003;</> : <>&#6464;</>}
       </div>
