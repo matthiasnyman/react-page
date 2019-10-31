@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-assangment/static/css/main.8d2aa289.chunk.css",
+    "main.js": "/react-assangment/static/js/main.f5dc70dc.chunk.js",
+    "main.js.map": "/react-assangment/static/js/main.f5dc70dc.chunk.js.map",
+    "runtime-main.js": "/react-assangment/static/js/runtime-main.94b801fb.js",
+    "runtime-main.js.map": "/react-assangment/static/js/runtime-main.94b801fb.js.map",
+    "static/js/2.4694450d.chunk.js": "/react-assangment/static/js/2.4694450d.chunk.js",
+    "static/js/2.4694450d.chunk.js.map": "/react-assangment/static/js/2.4694450d.chunk.js.map",
+    "index.html": "/react-assangment/index.html",
+    "precache-manifest.0ecf4e7e28ce57b1260f69e6e5f80b50.js": "/react-assangment/precache-manifest.0ecf4e7e28ce57b1260f69e6e5f80b50.js",
+    "service-worker.js": "/react-assangment/service-worker.js",
+    "static/css/main.8d2aa289.chunk.css.map": "/react-assangment/static/css/main.8d2aa289.chunk.css.map",
+    "static/media/Stopwatch.css": "/react-assangment/static/media/digital-7.1e670d88.ttf",
+    "static/media/stopwatch.png": "/react-assangment/static/media/stopwatch.175e16c5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.94b801fb.js",
+    "static/js/2.4694450d.chunk.js",
+    "static/css/main.8d2aa289.chunk.css",
+    "static/js/main.f5dc70dc.chunk.js"
+  ]
+}
