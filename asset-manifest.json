@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/react-assangment/static/css/main.8d2aa289.chunk.css",
-    "main.js": "/react-assangment/static/js/main.f5dc70dc.chunk.js",
-    "main.js.map": "/react-assangment/static/js/main.f5dc70dc.chunk.js.map",
-    "runtime-main.js": "/react-assangment/static/js/runtime-main.94b801fb.js",
-    "runtime-main.js.map": "/react-assangment/static/js/runtime-main.94b801fb.js.map",
-    "static/js/2.4694450d.chunk.js": "/react-assangment/static/js/2.4694450d.chunk.js",
-    "static/js/2.4694450d.chunk.js.map": "/react-assangment/static/js/2.4694450d.chunk.js.map",
-    "index.html": "/react-assangment/index.html",
-    "precache-manifest.0ecf4e7e28ce57b1260f69e6e5f80b50.js": "/react-assangment/precache-manifest.0ecf4e7e28ce57b1260f69e6e5f80b50.js",
-    "service-worker.js": "/react-assangment/service-worker.js",
-    "static/css/main.8d2aa289.chunk.css.map": "/react-assangment/static/css/main.8d2aa289.chunk.css.map",
-    "static/media/Stopwatch.css": "/react-assangment/static/media/digital-7.1e670d88.ttf",
-    "static/media/stopwatch.png": "/react-assangment/static/media/stopwatch.175e16c5.png"
+    "main.css": "/react-assignment/static/css/main.96566732.chunk.css",
+    "main.js": "/react-assignment/static/js/main.66f5ba5a.chunk.js",
+    "main.js.map": "/react-assignment/static/js/main.66f5ba5a.chunk.js.map",
+    "runtime-main.js": "/react-assignment/static/js/runtime-main.9e2363e3.js",
+    "runtime-main.js.map": "/react-assignment/static/js/runtime-main.9e2363e3.js.map",
+    "static/js/2.97648ca0.chunk.js": "/react-assignment/static/js/2.97648ca0.chunk.js",
+    "static/js/2.97648ca0.chunk.js.map": "/react-assignment/static/js/2.97648ca0.chunk.js.map",
+    "index.html": "/react-assignment/index.html",
+    "precache-manifest.c6ed5ea147c05008c8d73e67ed274cd3.js": "/react-assignment/precache-manifest.c6ed5ea147c05008c8d73e67ed274cd3.js",
+    "service-worker.js": "/react-assignment/service-worker.js",
+    "static/css/main.96566732.chunk.css.map": "/react-assignment/static/css/main.96566732.chunk.css.map",
+    "static/media/Stopwatch.css": "/react-assignment/static/media/digital-7.1e670d88.ttf",
+    "static/media/stopwatch.png": "/react-assignment/static/media/stopwatch.175e16c5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.94b801fb.js",
-    "static/js/2.4694450d.chunk.js",
-    "static/css/main.8d2aa289.chunk.css",
-    "static/js/main.f5dc70dc.chunk.js"
+    "static/js/runtime-main.9e2363e3.js",
+    "static/js/2.97648ca0.chunk.js",
+    "static/css/main.96566732.chunk.css",
+    "static/js/main.66f5ba5a.chunk.js"
   ]
 }
