@@ -10,7 +10,7 @@ import './App.scss';
 
 import Stopwatch from './components/stopwatch/Stopwatch';
 import Todo from './components/Todo/Todo';
-import Sudoku from './components/sodoku/Sodoku';
+// import Sudoku from './components/sodoku/Sodoku';
 import Home from './components/Home/Home';
 
 

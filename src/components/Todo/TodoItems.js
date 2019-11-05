@@ -12,7 +12,7 @@ function TodoItem(props) {
     <div className="todo-item">
 
 
-      <div onClick={() => props.handleChange(props.item.id)}>
+      <div onClick={() => props.handleChange(props.item, true)}>
         {props.item.completed ? <>&#10003;</> : <>&#6464;</>}
       </div>
 
@@ -33,7 +33,7 @@ function TodoItem(props) {
 
       )}
 
-      <small onClick={() => props.onRemove(props.item.id)}>X</small>
+      <small onClick={() => props.onRemove(props.item)}>X</small>
     </div>
   );
 }

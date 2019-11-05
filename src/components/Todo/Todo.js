@@ -23,7 +23,7 @@ class Todo extends React.Component {
   }
 
   getTodos() {
-    fetch("http://localhost:4000/todos")
+    fetch("/")
       .then(res => res.json())
       .then(
         result => {
@@ -38,33 +38,36 @@ class Todo extends React.Component {
           });
         }
       );
+
   }
 
-  handleChange(e) {
-    if (typeof e === "number") {
-      // this.setState(prevState => {
-      //   const updatedTodos = prevState.todos.map(todo => {
-      //     if (todo.id === e) {
-      //       todo.completed = !todo.completed;
-      //     }
-      //     return todo;
-      //   });
-      //   return {
-      //     todos: updatedTodos
-      //   };
-      // });
+  handleChange(e, test) {
+    if ( test === true ) {
+      this.setState(prevState => {
+        const updatedTodos = prevState.todos.map(todo => {
+          if (todo.id === e.id) {
+            todo.completed = !todo.completed;
+          }
+          return todo;
+        });
+        return {
+          todos: updatedTodos
+        }
+      })
 
-      fetch(`http://localhost:4000/todos/${e}`, {
+      fetch(`/todos/${e._id}`, {
         method: "PATCH",
         body: JSON.stringify({
-          completed: !this.state.completed
+          completed: !e.completed
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
         }
       })
         .then(response => response.json())
-        .then(json => this.getTodos());
+        .then(() => console.log('state'));
+
+    console.log(e.completed)
 
     } else {
       this.setState(prevState => {
@@ -98,7 +101,7 @@ class Todo extends React.Component {
       //   });
       //   console.log(value.text);
 
-      fetch(`http://localhost:4000/todos/${value.id}`, {
+      fetch(`/todos/${value._id}`, {
         method: "PATCH",
         body: JSON.stringify({
           text: value.text,
@@ -109,7 +112,7 @@ class Todo extends React.Component {
         }
       })
         .then(response => response.json())
-        .then(json => this.getTodos());
+        .then(() => this.getTodos());
     }
   }
 
@@ -124,17 +127,14 @@ class Todo extends React.Component {
       text: ""
     });
 
-    fetch("http://localhost:4000/todos", {
+    fetch("/todos", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        id: Date.now(),
-        text: this.state.text,
-        completed: false,
-        edit: false
+        text: this.state.text
       })
     })
       .then(response => response.json())
@@ -144,8 +144,8 @@ class Todo extends React.Component {
   onRemove(id) {
     // const filteredArray = this.state.todos.filter(item => item.id !== id);
     // this.setState({ todos: filteredArray });
-
-    fetch(`http://localhost:4000/todos/${id}`, {
+    console.log(id)
+    fetch(`/todos/${id._id}`, {
       method: "DELETE"
     }).then(() => this.getTodos());
   }
