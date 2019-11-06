@@ -23,7 +23,7 @@ class Todo extends React.Component {
   }
 
   getTodos() {
-    fetch("/")
+    fetch("/todos")
       .then(res => res.json())
       .then(
         result => {
@@ -38,11 +38,10 @@ class Todo extends React.Component {
           });
         }
       );
-
   }
 
   handleChange(e, test) {
-    if ( test === true ) {
+    if (test === true) {
       this.setState(prevState => {
         const updatedTodos = prevState.todos.map(todo => {
           if (todo.id === e.id) {
@@ -52,9 +51,8 @@ class Todo extends React.Component {
         });
         return {
           todos: updatedTodos
-        }
+        };
       })
-
       fetch(`/todos/${e._id}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -65,10 +63,7 @@ class Todo extends React.Component {
         }
       })
         .then(response => response.json())
-        .then(() => console.log('state'));
-
-    console.log(e.completed)
-
+        .then(() => this.getTodos());
     } else {
       this.setState(prevState => {
         const updatedTodos = prevState.todos.map(todo => {
@@ -94,18 +89,17 @@ class Todo extends React.Component {
 
   onChangeEvent(value, event) {
     if (event.key === "Enter") {
-      // this.setState({
-      //   todos: this.state.todos.map(item =>
-      //     item.id === value.id ? { ...item, edit: false } : item
-      //     )
-      //   });
-      //   console.log(value.text);
+      this.setState({
+        todos: this.state.todos.map(item =>
+          item.id === value.id ? { ...item, edit: false } : item
+        )
+      });
+      console.log(value.text);
 
       fetch(`/todos/${value._id}`, {
         method: "PATCH",
         body: JSON.stringify({
-          text: value.text,
-          edit: false
+          text: value.text
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
@@ -144,7 +138,7 @@ class Todo extends React.Component {
   onRemove(id) {
     // const filteredArray = this.state.todos.filter(item => item.id !== id);
     // this.setState({ todos: filteredArray });
-    console.log(id)
+    console.log(id);
     fetch(`/todos/${id._id}`, {
       method: "DELETE"
     }).then(() => this.getTodos());
