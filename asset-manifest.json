@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-assignment/static/css/main.96566732.chunk.css",
-    "main.js": "/react-assignment/static/js/main.66f5ba5a.chunk.js",
-    "main.js.map": "/react-assignment/static/js/main.66f5ba5a.chunk.js.map",
+    "main.js": "/react-assignment/static/js/main.d49a19c1.chunk.js",
+    "main.js.map": "/react-assignment/static/js/main.d49a19c1.chunk.js.map",
     "runtime-main.js": "/react-assignment/static/js/runtime-main.9e2363e3.js",
     "runtime-main.js.map": "/react-assignment/static/js/runtime-main.9e2363e3.js.map",
     "static/js/2.97648ca0.chunk.js": "/react-assignment/static/js/2.97648ca0.chunk.js",
     "static/js/2.97648ca0.chunk.js.map": "/react-assignment/static/js/2.97648ca0.chunk.js.map",
     "index.html": "/react-assignment/index.html",
-    "precache-manifest.c6ed5ea147c05008c8d73e67ed274cd3.js": "/react-assignment/precache-manifest.c6ed5ea147c05008c8d73e67ed274cd3.js",
+    "precache-manifest.3b3999de699be6f1ab23dc08a554b820.js": "/react-assignment/precache-manifest.3b3999de699be6f1ab23dc08a554b820.js",
     "service-worker.js": "/react-assignment/service-worker.js",
     "static/css/main.96566732.chunk.css.map": "/react-assignment/static/css/main.96566732.chunk.css.map",
     "static/media/Stopwatch.css": "/react-assignment/static/media/digital-7.1e670d88.ttf",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.9e2363e3.js",
     "static/js/2.97648ca0.chunk.js",
     "static/css/main.96566732.chunk.css",
-    "static/js/main.66f5ba5a.chunk.js"
+    "static/js/main.d49a19c1.chunk.js"
   ]
 }
